@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -139,6 +138,7 @@ const Header: React.FC<HeaderProps> = ({
         </>
       </div>
     </div>
+    {children}
   </div>
   );
 }
