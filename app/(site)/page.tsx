@@ -1,6 +1,7 @@
 import getSongs from "@/actions/getSongs";
 import Header from "@/components/Header";
 import ListItem from "@/components/ListItem";
+import PageContent from "./components/PageContent";
 
 export const revealidate = 0;
 
@@ -52,9 +53,7 @@ export default async function Home() {
             Newest songs
           </h1>
         </div>
-        <div>
-          {songs.map((song) => <div>{song.title}</div>)}
-        </div>
+        <PageContent songs={songs} />
       </div>
     </div>
   )
