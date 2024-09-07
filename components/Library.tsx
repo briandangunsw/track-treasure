@@ -6,13 +6,14 @@ import { useUser } from "@/hooks/useUser";
 import { Song } from "@/types";
 import { AiOutlinePlus } from "react-icons/ai";
 import { TbPlaylist } from "react-icons/tb";
+import MediaItem from "./MediaItem";
 
 interface LibraryProps {
   songs: Song[];
 }
 
-const Library: React.FC<LibraryProps> = ({
-  songs = []
+export const Library: React.FC<LibraryProps> = ({
+  songs
 }) => {
   const authModal = useAuthModal();
   const uploadModal = useUploadModal();
@@ -76,11 +77,15 @@ const Library: React.FC<LibraryProps> = ({
         px-3
       ">
         {songs.map((item) => (
-            <div>{item.title}</div>
+            <MediaItem
+              onClick={() => {}}
+              key={item.id}
+              data={item}
+          />
         ))}
       </div>
     </div>
-    );
+  );
 }
 
 export default Library;

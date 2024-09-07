@@ -19,9 +19,10 @@ export const revalidate = 0;
 export default async function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   const userSongs = await getSongsByUserId();
+  
   return (
     <html lang="en">
       <body className={font.className}>
@@ -29,7 +30,7 @@ export default async function RootLayout({
         <SupabaseProvider>
           <UserProvider>
             <ModalProvider />
-            <Sidebar>
+            <Sidebar songs={userSongs}>
               {children}
             </Sidebar>
           </UserProvider>
