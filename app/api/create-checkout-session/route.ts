@@ -9,7 +9,7 @@ import { createOrRetrieveACustomer } from "@/libs/supabaseAdmin";
 export async function POST(
   request: Request
 ) {
-  const { price, quantity = 1, metadata = {} } = await request.json()
+  const { price, quantity = 1, metadata = {} } = await request.json();
 
   try {
     const supabase = createRouteHandlerClient({
@@ -24,19 +24,19 @@ export async function POST(
     });
 
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card"],
+      payment_method_types: ['card'],
       billing_address_collection: 'required',
       customer,
       line_items: [
         {
           price: price.id,
-          quantity
+          quantity: quantity
         }
       ],
       mode: 'subscription',
       allow_promotion_codes: true,
       subscription_data: {
-        trial_from_plan: true,
+        trial_period_days: 14,
         metadata
       },
       success_url: `${getURL()}/account`,
