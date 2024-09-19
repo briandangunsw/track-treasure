@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 import { stripe } from "@/libs/stripe";
 import { getURL } from "@/libs/helpers";
-import { createOrRetrieveCustomer } from "@/libs/supabaseAdmin";
+import { createOrRetrieveACustomer } from "@/libs/supabaseAdmin";
 
 export async function POST() {
   try {
@@ -16,7 +16,7 @@ export async function POST() {
 
     if (!user) throw new Error('Could not get user');
 
-    const customer = await createOrRetrieveCustomer({
+    const customer = await createOrRetrieveACustomer({
       uuid: user.id || '',
       email: user.email || ''
     });
@@ -29,7 +29,6 @@ export async function POST() {
     });
 
     return NextResponse.json({ url });
-
   } catch (error: any) {
     console.log(error);
     return new NextResponse('Internal Error', { status: 500 });
