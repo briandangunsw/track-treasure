@@ -1,13 +1,13 @@
 "use client";
 
-import { Price, ProductWithPrice } from "@/types";
+import { Price, ProductWithPrice } from '@/types';
 import Modal from './Modal';
 import Button from './Button';
-import { useState } from "react";
-import { useUser } from "@/hooks/useUser";
-import { toast } from "react-hot-toast";
-import { postData } from "@/libs/helpers";
-import { getStripe } from "@/libs/stripeClient";
+import { useState } from 'react';
+import { useUser } from '@/hooks/useUser';
+import { toast } from 'react-hot-toast';
+import { postData } from '@/libs/helpers';
+import { getStripe } from '@/libs/stripeClient';
 
 interface SubscribeModalProps {
   products: ProductWithPrice[];
@@ -45,7 +45,7 @@ const SubscribeModal: React.FC<SubscribeModalProps> = ({
 
     try {
       const { sessionId } = await postData({
-        url: '/api/creat-checkout-session',
+        url: '/api/create-checkout-session',
         data: { price }
       });
 
@@ -85,18 +85,14 @@ const SubscribeModal: React.FC<SubscribeModalProps> = ({
             >
               {`Subscribe for ${formatPrice(price)} a ${price.interval}`}
             </Button>
-          ))
+          ));
         })}
       </div>
     )
   }
 
   if (subscription) {
-    content = (
-      <div className="text-center">
-        Already subscribed!
-      </div>
-    )
+    content = <div className="text-center">Already subscribed!</div>;
   }
 
   return (
