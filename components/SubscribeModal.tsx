@@ -8,6 +8,7 @@ import { useUser } from '@/hooks/useUser';
 import { toast } from 'react-hot-toast';
 import { postData } from '@/libs/helpers';
 import { getStripe } from '@/libs/stripeClient';
+import { useSubscribeModal } from '@/hooks/useSubscribeModal';
 
 interface SubscribeModalProps {
   products: ProductWithPrice[];
@@ -26,9 +27,15 @@ const formatPrice = (price: Price) => {
 const SubscribeModal: React.FC<SubscribeModalProps> = ({
   products
 }) => {
+  const subscribeModal = useSubscribeModal();
   const { user, isLoading, subscription } = useUser();
-
   const [priceIdLoading, setPriceIdLoading] = useState<string>();
+
+  const onChange = (open: boolean) => {
+    if (!open) {
+      subscribeModal.onClose();
+    }
+  }
 
   const handleCheckout = async (price: Price) => {
     setPriceIdLoading(price.id);
@@ -99,8 +106,8 @@ const SubscribeModal: React.FC<SubscribeModalProps> = ({
     <Modal
       title="Only for premium users"
       description="Listen to music with Track Treasure Premium"
-      isOpen
-      onChange={() => {}}
+      isOpen={subscribeModal.isOpen}
+      onChange={onChange}
     >
       {content}
     </Modal>
