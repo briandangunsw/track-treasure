@@ -7,7 +7,7 @@ import {
   upsertProductRecord,
   upsertPriceRecord,
   manageSubscriptionStatusChange
-} from "@/libs/supabaseAdmin";
+} from '@/libs/supabaseAdmin';
 
 const relevantEvents = new Set([
   'product.created',
@@ -70,7 +70,7 @@ export async function POST(
           }
           break;
         default:
-          throw new Error('Unhandled relevent event!');
+          throw new Error('Unhandled relevant event!');
       }
     } catch (error) {
       console.log(error);
