@@ -52,7 +52,8 @@ const AccountContent = () => {
       {subscription && (
         <div className="flex flex-col gap-y-4">
             <p>
-              You are currently on the <b>{subscription?.prices?.products?.name}</b>plan.
+              You are currently on the <b>{subscription?.prices?.products?.name}</b> plan.
+              <p>Welcome to Studious Family! Lets listen to music, have fun and study hard together!</p>
             </p>
             <Button
               disabled={loading || isLoading}

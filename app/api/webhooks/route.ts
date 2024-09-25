@@ -23,9 +23,10 @@ const relevantEvents = new Set([
 export async function POST(
   request: Request
 ) {
+  console.log("Webhook received!");
   const body = await request.text();
   const sig = headers().get('Stripe-Signature');
-
+  console.log("Signature:", sig);
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
   let event: Stripe.Event;
 
