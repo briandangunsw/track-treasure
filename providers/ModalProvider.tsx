@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import AuthModal from '@/components/AuthModal';
 import UploadModal from '@/components/UploadModal';

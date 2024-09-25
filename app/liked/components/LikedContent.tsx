@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
-import { Song } from "@/types";
-import { useUser } from "@/hooks/useUser";
-import MediaItem from "@/components/MediaItem";
-import LikeButton from "@/components/LikeButton";
-import useOnPlay from "@/hooks/useOnPlay";
+import { Song } from '@/types';
+import { useUser } from '@/hooks/useUser';
+import MediaItem from '@/components/MediaItem';
+import LikeButton from '@/components/LikeButton';
+import useOnPlay from '@/hooks/useOnPlay';
 
 
 interface LikedContentProps {

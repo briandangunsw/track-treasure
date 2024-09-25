@@ -1,6 +1,6 @@
-import { Song } from "@/types";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
+import { Song } from '@/types';
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
+import { cookies } from 'next/headers';
 
 const getLikedSongs = async (): Promise<Song[]> => {
   const supabase = createServerComponentClient({
@@ -19,18 +19,18 @@ const getLikedSongs = async (): Promise<Song[]> => {
     .eq('user_id', session?.user?.id)
     .order('created_at', { ascending: false });
 
-    if (error) {
-      console.log(error);
-      return [];
-    }
+  if (error) {
+    console.log(error);
+    return [];
+  }
 
-    if (!data) {
-      return [];
-    }
+  if (!data) {
+    return [];
+  }
 
-    return data.map((item) => ({
-      ...item.songs
-    }))
+  return data.map((item) => ({
+    ...item.songs
+  }));
 };
 
 export default getLikedSongs;

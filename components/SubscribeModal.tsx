@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { Price, ProductWithPrice } from '@/types';
 import Modal from './Modal';

@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { useRouter } from "next/navigation";
-import { useSubscribeModal } from "@/hooks/useSubscribeModal";
-import { useUser } from "@/hooks/useUser";
-import { useEffect, useState } from "react";
-import { postData } from "@/libs/helpers";
-import toast from "react-hot-toast";
-import Button from "@/components/Button";
+import { useRouter } from 'next/navigation';
+import { useSubscribeModal } from '@/hooks/useSubscribeModal';
+import { useUser } from '@/hooks/useUser';
+import { useEffect, useState } from 'react';
+import { postData } from '@/libs/helpers';
+import toast from 'react-hot-toast';
+import Button from '@/components/Button';
 
 const AccountContent = () => {
   const router = useRouter();
