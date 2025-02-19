@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Track Treasure
 
-## Getting Started
+Track Treasure is an innovative music management platform designed to help users organize and treasure their music collections. Inspired by Spotify's intuitive interface and powerful cataloging features, Track Treasure allows music enthusiasts to effortlessly manage, categorize, and enjoy their favorite tunes.
 
-First, run the development server:
+---
 
+## 📌 Project Overview
+
+Track Treasure is built for music lovers who want more control over their collections. It enables users to:
+
+- Organize music into personalized playlists and categories.
+- Manage music details with ease, including adding, editing, and deleting tracks.
+- Discover new music treasures and rediscover old favorites.
+- Securely store and access their music collections from anywhere.
+
+This project is designed with a user-centric approach, ensuring a smooth and intuitive experience for anyone looking to manage their music treasures.
+
+---
+
+## 🔑 Key Features
+
+- User Authentication: Secure sign-up and login system for personalized experiences.
+- Music Categorization: Organize tracks into custom playlists and genres.
+- Detailed Track Information: Add album details, artists, release dates, and more.
+- Real-time Updates: View and edit track details with instant synchronization.
+- Search and Discover: Find music using search and filtering options.
+- Music Player: Enjoy music directly within the app with playback controls.
+- Responsive Design: Accessible on various devices including mobile, tablet, and desktop.
+
+---
+
+## ⚙️ Technologies Used
+
+Track Treasure leverages modern web technologies to provide a seamless and efficient experience:
+
+### Frontend
+- React.js - For building dynamic and responsive user interfaces.
+- Tailwind CSS - For elegant and consistent styling across the application.
+
+### Backend
+- Node.js and Express - To handle server-side logic and APIs.
+- Supabase - For reliable and scalable data storage and authentication.
+
+---
+
+## 🛠️ Installation and Setup
+
+To set up and run Track Treasure locally, follow these steps:
+
+### Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+git clone https://github.com/briandangunsw/track-treasure.git
+cd track-treasure
